@@ -1,24 +1,11 @@
 package bersaglio;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.*;
 
-public class Bersaglio {
+public class Bersaglio extends JPanel {
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Il mio bersaglio");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JBersaglio panel = new JBersaglio();
-        frame.getContentPane().add(panel);
-        frame.pack();
-        frame.setVisible(true);
-    }
-}
-
-class JBersaglio extends JPanel {
-
-    public JBersaglio() {
+    public Bersaglio() {
         setBackground(Color.PINK);
         setPreferredSize(new Dimension(300, 300));
     }
@@ -35,12 +22,10 @@ class JBersaglio extends JPanel {
             else
                 page.setColor(Color.ORANGE);
             page.fillOval(x, y, diametro, diametro);
-            x+=delta;
-            y=x;
+            y=(x+=delta);
             diametro-=2*delta;
         }
         page.setColor(Color.RED);
         page.fillOval(x, y, diametro, diametro);
     }
-
 }
