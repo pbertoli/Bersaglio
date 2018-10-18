@@ -13,7 +13,7 @@ public class Bersaglio extends JPanel implements ActionListener {
     private int x = 0, y = 0, dx = 7, dy = 5;
 
     public Bersaglio() {
-        //setBackground(Color.PINK);
+        setBackground(Color.PINK);
         setPreferredSize(new Dimension(SIZE, SIZE));
         timer.start();
     }
